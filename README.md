@@ -10,16 +10,16 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 
 1. Each NodeType SHOULD be defined in a dedicated yaml-file and the file-name MUST represent the namespace of the contained NodeType/s. This helps finding the definition of a node type and get an understanding of the existing NodeTypes by looking at the configuration folder.
 
-1. The namespace of the your own NodeTypes SHOULD be structured and nested. It is RECOMMEND to start with one of the prefixes "Document", "Content", "Mixin", "Collection" or "Constraint".
-   "Document" NodeTypes inherit from Neos.Neos:Document
-   "Content" NodeTypes inherit from Neos.Neos:Content
-   "Collection" NodeTypes which inherit from Neos.Neos:ContentCollections
-   "Mixin" NodeTypes are abstract and define a reusable set of properties or child nodes.
-   "Constraint" NodeTypes are abstract and define the allowed usage of Nodes.
+1. The namespace of the your own NodeTypes SHOULD be structured and nested. It is RECOMMEND to start with one of the prefixes `Document`, `Content`, `Mixin`, `Collection` or `Constraint`.
+   * `Document` NodeTypes inherit from Neos.Neos:Document
+   * `Content` NodeTypes inherit from Neos.Neos:Content
+   * `Collection` NodeTypes which inherit from Neos.Neos:ContentCollections
+   * `Mixin` NodeTypes are abstract and define a reusable set of properties or child nodes.
+   * `Constraint` NodeTypes are abstract and define the allowed usage of Nodes.
  
-1. NodeType-files that modify NodeTypes from other Packages MUST have “Override” in the filename.
+1. NodeType-files that modify NodeTypes from other Packages MUST have `Override` in the filename.
 
-1. Sub-NodeTypes that are bound to a specific parent NodeType SHOULD have a name matching the parent, e.g. "Vendor:Content.Slider" and "Vendor:Content.Slider.Item"
+1. Sub-NodeTypes that are bound to a specific parent NodeType SHOULD have a name matching the parent, e.g. `Vendor:Content.Slider` and `Vendor:Content.Slider.Item`
 
 1. Properties SHOULD only be editable by a single editor – either inline or in the inspector. Editing the same property with different editors like inspector and inline easily causes problems when settings are only slightly off.
 
@@ -35,19 +35,19 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 
 1. Fusion files SHOULD only contain a single prototype. The folder and filenames MUST reflect the names of the contained prototypes.
 
-1. The Fusion prototype-namespace SHOULD be structured and nested. It is RECOMMENDED to start with one of the prefixes “Content”, “Document”, “Component”,  “Helper” “Presentation” and “Integration”.
+1. The Fusion prototype-namespace SHOULD be structured and nested. It is RECOMMENDED to start with one of the prefixes `Content`, `Document`, `Component`,  `Helper` `Presentation` and `Integration`.
 
 1. Each non-abstract NodeType SHOULD have a matching Fusion prototype. This is the default way of Neos to find a matching Renderer and makes the code easy to understand. We RECOMMEND to abstract code into Fusion prototypes that are not bound to NodeTypes and reuse them across the project.
 
-1. Fusion prototypes with the prefixes “Content” and “Document” SHOULD implement the rendering of a Content or Document NodeType.
+1. Fusion prototypes with the prefixes `Content` and `Document` SHOULD implement the rendering of a Content or Document NodeType.
 
-1. Fusion prototypes with the “Component” Prefix SHOULD implement reusable rendering aspects.
+1. Fusion prototypes with the `Component` Prefix SHOULD implement reusable rendering aspects.
 
 1. The rendering of content SHOULD be defined in Fusion-AFX. Fluid-Templates are still supported but no longer considered best-practice.
 
-1. Fusion-files that modify prototypes from other packages MUST have “Override” in the file- or folder name.
+1. Fusion-files that modify prototypes from other packages MUST have `Override` in the file- or folder name.
 
-1. For larger projects the presentainal prototypes SHOULD be separated from Integration. This can be done with seperate packages or folders “Presentation”, “Integration”. Those presentational Fusion prototypes MUST implement rendering aspects only without fetching data from the ContentRepository. 
+1. For larger projects the presentainal prototypes SHOULD be separated from Integration. This can be done with seperate packages or folders `Presentation`, `Integration`. Those presentational Fusion prototypes MUST implement rendering aspects only without fetching data from the ContentRepository. 
 
 1. Visual differentiations between Documents SHOULD be implemented via separate Document-NodeTypes. Especially the layout property from Neos.Neos:NodeTypes.Page layout property SHOULD NOT be used.
 
@@ -55,7 +55,7 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 
 1. Neos projects SHOULD be managed as a single git repository that contains all packages that are specific to this project. This gives you a shared git history for all project-specific code.
 
-1. The “Packages” folder SHOULD only be controlled by composer. All your own project-specific packages MUST be be stored in special directory like “DistributionPackages” that is referenced as a repository of type path in the main composer file.
+1. The `Packages` folder SHOULD only be controlled by composer. All your own project-specific packages MUST be be stored in special directory like `DistributionPackages` that is referenced as a repository of type path in the main composer file.
 
 ## Public Packages
 
