@@ -2,11 +2,13 @@
 
 The recommendation we are giving here do not mean that things are wrong if done differently, there are valid reasons to deviate from those guidelines. However with no specific reasons speaking against we strongly recommend to obey to the following rules.
 
+## Rules
+
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
 Note: These rules will eventually end up in the Neos-documentation where they will be reevaluated and extended in regular intervals. We will use semantic versioning for these best practises.
 
-## NodeTypes
+### NodeTypes
 
 1. Each NodeType SHOULD be defined in a dedicated yaml-file and the file-name MUST represent the namespace of the contained NodeType/s. This helps finding the definition of a node type and get an understanding of the existing NodeTypes by looking at the configuration folder.
 
@@ -29,7 +31,7 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 
 1. A NodeType SHOULD only inherit from a single non-abstract superType. All other superTypes SHOULD be Mixins, or Constraints. This helps keeping the inheritance chain understandable.
 
-## Fusion
+### Fusion
 
 1. The Root.Fusion in a project MUST not contain anything but includes.
 
@@ -51,13 +53,13 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 
 1. Visual differentiations between Documents SHOULD be implemented via separate Document-NodeTypes. Especially the layout property from Neos.Neos:NodeTypes.Page layout property SHOULD NOT be used.
 
-## Distributions
+### Distributions
 
 1. Neos projects SHOULD be managed as a single git repository that contains all packages that are specific to this project. This gives you a shared git history for all project-specific code.
 
 1. The `Packages` folder SHOULD only be controlled by composer. All your own project-specific packages MUST be be stored in special directory like `DistributionPackages` that is referenced as a repository of type path in the main composer file.
 
-## Public Packages
+### Public Packages
 
 1. We RECOMMEND to separate reusable Mixins, Helpers and Prototypes from concrete NodeTypes, Configurations and Rendering. This makes it easy to only use specific parts of your package.
 You MAY provide presentational components without a direct coupling to the NodeTypes. This makes your package even more flexible other developers.
