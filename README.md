@@ -11,13 +11,12 @@ Note: These rules will eventually end up in the Neos-documentation where they wi
 1. Each NodeType SHOULD be defined in a dedicated yaml-file and the file-name MUST represent the namespace of the contained NodeType/s. This helps finding the definition of a node type and get an understanding of the existing NodeTypes by looking at the configuration folder.
 
 1. The namespace of the your own NodeTypes SHOULD be structured and nested. It is RECOMMEND to start with one of the prefixes "Document", "Content", "Mixin", "Collection" or "Constraint".
-
-  ​​"Document" NodeTypes inherit from Neos.Neos:Document
-  "Content" NodeTypes inherit from Neos.Neos:Content
-  "Collection" NodeTypes which inherit from Neos.Neos:ContentCollections
-  "Mixin" NodeTypes are abstract and define a reusable set of properties or child nodes.
-  "Constraint" NodeTypes are abstract and define the allowed usage of Nodes.
-
+   "Document" NodeTypes inherit from Neos.Neos:Document
+   "Content" NodeTypes inherit from Neos.Neos:Content
+   "Collection" NodeTypes which inherit from Neos.Neos:ContentCollections
+   "Mixin" NodeTypes are abstract and define a reusable set of properties or child nodes.
+   "Constraint" NodeTypes are abstract and define the allowed usage of Nodes.
+ 
 1. NodeType-files that modify NodeTypes from other Packages MUST have “Override” in the filename.
 
 1. Sub-NodeTypes that are bound to a specific parent NodeType SHOULD have a name matching the parent, e.g. "Vendor:Content.Slider" and "Vendor:Content.Slider.Item"
